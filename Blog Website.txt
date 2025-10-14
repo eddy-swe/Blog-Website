@@ -1,0 +1,34 @@
+Final Capstone Project
+Project Description:
+
+The following is the description of the final capstone project.
+1. Blog Website
+
+Your blog website should have the following features:
+
+    Responsive Layout:
+        The website is designed to be visually appealing and functional on various devices, ensuring a seamless user experience across different screen sizes.
+
+    Navigation Bar:
+        A navigation bar is included for easy navigation throughout the website, allowing users to access different sections like Home, About Me, Blog Posts, and Contact.
+
+    Blog Post List:
+        A section displaying a list of blog posts with titles, excerpts, and publication dates. Users can click on a post to view its full content.
+
+    Single Post View:
+        Users can view a complete blog post, including images, text, and any associated comments. The layout remains visually pleasing and easy to read.
+
+    About Me Section:
+        A dedicated section that provides a brief biography of the author, possibly with an image and some personal details.
+
+    Contact Form:
+        A contact form is available for users to reach out, including fields for name, email, and message. Basic form validation ensures data integrity.
+
+    Footer:
+        A footer is included at the bottom of the page, containing additional links, copyright information, or any other relevant details.
+
+    Logo:
+        A logo representing the blog or the author is included in the header for brand identity.
+
+    Styling and Animations:
+        The website includes CSS styling for a polished look, with subtle animations or transitions to enhance the user experience.
