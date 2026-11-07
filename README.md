@@ -1,7 +1,6 @@
-## Live Demo
-### [BLOG WEBSITE](https://blog-novadev.netlify.app/)
+#### Live Demo: [BLOG WEBSITE](https://blog-novadev.netlify.app/)
 
-# Blog Website
+# Mindful Musings - Blog Website
 This is a simple blog website built using React and Tailwind CSS. It allows users to read and write blog posts, as well as view a list of all available posts.
 
 ## Screenshots
@@ -33,3 +32,5 @@ This is a simple blog website built using React and Tailwind CSS. It allows user
 
 ### Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or improvements.
+
+#### NB: To be Migrated to a different stack soon.
