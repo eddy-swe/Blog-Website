@@ -1,20 +1,29 @@
-// Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             if (menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden');
-                feather.replace();
             } else {
                 menu.classList.add('hidden');
             }
-        });
-
-        // Initialize AOS and Feather Icons
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
             feather.replace();
         });
+    }
+
+    // Initialize AOS animations
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    }
+
+    // Initialize Feather Icons
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
+});
