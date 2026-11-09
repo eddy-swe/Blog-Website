@@ -1,4 +1,4 @@
-#### Live Demo: [BLOG WEBSITE](https://blog-novadev.netlify.app/)
+#### Live Demo: [BLOG WEBSITE](https://jovial-lebkuchen-5ef702.netlify.app/)
 
 # Mindful Musings - Blog Website
 This is a simple blog website built using React and Tailwind CSS. It allows users to read and write blog posts, as well as view a list of all available posts.
