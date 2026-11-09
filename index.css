@@ -37,4 +37,110 @@
         .nav-link:hover::after {
             width: 100%;
         }
+
+        html {
+            color-scheme: light;
+        }
+
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-toggle {
+            color: #6b7280;
+        }
+
+        .theme-toggle:hover {
+            color: #111827;
+            background-color: #f3f4f6;
+        }
+
+        .dark-mode {
+            color-scheme: dark;
+        }
+
+        .dark-mode body,
+        .dark-mode .bg-gray-50 {
+            background-color: #111827;
+            color: #e5e7eb;
+        }
+
+        .dark-mode .bg-white {
+            background-color: #1f2937;
+        }
+
+        .dark-mode .text-gray-900 {
+            color: #f9fafb;
+        }
+
+        .dark-mode .text-gray-700,
+        .dark-mode .text-gray-600 {
+            color: #d1d5db;
+        }
+
+        .dark-mode .text-gray-500 {
+            color: #9ca3af;
+        }
+
+        .dark-mode .text-gray-400 {
+            color: #9ca3af;
+        }
+
+        .dark-mode .border-gray-300 {
+            border-color: #4b5563;
+        }
+
+        .dark-mode .bg-blue-50 {
+            background-color: #172554;
+        }
+
+        .dark-mode .bg-blue-100 {
+            background-color: #1e3a8a;
+        }
+
+        .dark-mode .text-blue-700 {
+            color: #bfdbfe;
+        }
+
+        .dark-mode .text-blue-600 {
+            color: #60a5fa;
+        }
+
+        .dark-mode .hover\:bg-gray-100:hover {
+            background-color: #374151;
+        }
+
+        .dark-mode .hover\:bg-gray-50:hover {
+            background-color: #374151;
+        }
+
+        .dark-mode .hover\:text-gray-900:hover {
+            color: #f9fafb;
+        }
+
+        .dark-mode .theme-toggle {
+            color: #d1d5db;
+        }
+
+        .dark-mode .theme-toggle:hover {
+            color: #ffffff;
+            background-color: #374151;
+        }
+
+        .dark-mode input,
+        .dark-mode textarea,
+        .dark-mode select {
+            background-color: #111827;
+            color: #f9fafb;
+            border-color: #4b5563;
+        }
+
+        .dark-mode input::placeholder,
+        .dark-mode textarea::placeholder {
+            color: #9ca3af;
+        }
+
+        .dark-mode .post-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.35), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
         
