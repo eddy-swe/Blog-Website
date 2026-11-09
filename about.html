@@ -3,88 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#121214">
     <title>Mindful Musings | About Me</title>
-    <script>
-        if (localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="stylesheet" href="index.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .title-font {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, #4a6b5d, #a84d38);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .nav-link:hover {
-            color: #a84d38;
-        }
-        
-        .nav-link::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #e07a5f;
-            transition: width .3s;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #3b82f6;
-            border: 4px solid #bfdbfe;
-        }
-    </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-page text-ink">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="site-nav sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="text-2xl font-bold gradient-text">Mindful Musings</span>
-                    </div>
+                    <span class="text-2xl font-bold gradient-text">Mindful Musings</span>
                 </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="index.html" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
-                    <a href="about.html" class="nav-link text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
-                    <a href="blog.html" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Blog</a>
-                    <a href="contact.html" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
+                    <a href="about.html" class="nav-link is-active inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">About</a>
+                    <a href="blog.html" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium">Blog</a>
+                    <a href="contact.html" class="nav-link inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
                 </div>
-                <button type="button" id="theme-toggle" class="theme-toggle inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-label="Switch to dark mode" aria-pressed="false">
-                    <i data-feather="moon"></i>
-                </button>
                 <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-muted hover:text-ink hover:bg-card-2 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" id="mobile-menu-button">
                         <i data-feather="menu"></i>
                     </button>
                 </div>
@@ -94,43 +37,44 @@
         <!-- Mobile menu -->
         <div class="hidden md:hidden" id="mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="index.html" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
-                <a href="about.html" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
-                <a href="blog.html" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Blog</a>
-                <a href="contact.html" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
+                <a href="index.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-muted hover:text-ink hover:bg-card-2 text-base font-medium">Home</a>
+                <a href="about.html" class="block pl-3 pr-4 py-2 border-l-4 text-ink bg-accent-soft text-base font-medium" style="border-color: var(--accent)">About</a>
+                <a href="blog.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-muted hover:text-ink hover:bg-card-2 text-base font-medium">Blog</a>
+                <a href="contact.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-muted hover:text-ink hover:bg-card-2 text-base font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- About Hero -->
-    <div class="relative bg-white overflow-hidden">
+    <header class="relative bg-page overflow-hidden border-b border-line">
         <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+            <div class="relative z-10 pb-8 bg-page sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <div class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                     <div class="sm:text-center lg:text-left">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span class="block title-font">About Me</span>
-                            <span class="block text-blue-600">Sarah Johnson</span>
+                        <p class="text-sm font-semibold tracking-widest uppercase text-accent">Hello, I'm</p>
+                        <h1 class="mt-3 text-4xl tracking-tight font-bold text-ink sm:text-5xl md:text-6xl title-font">
+                            <span class="block">About Me</span>
+                            <span class="block text-accent">Sarah Johnson</span>
                         </h1>
-                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        <p class="mt-3 text-base text-muted sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                             Writer, thinker, and mindfulness advocate sharing thoughts on life, growth, and everything in between.
                         </p>
                     </div>
-                </main>
+                </div>
             </div>
         </div>
-        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="http://static.photos/people/1200x630/1" alt="Sarah Johnson">
+        <div class="relative h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-1/2">
+            <img class="hero-img block w-full h-full object-cover" src="https://static.photos/people/1200x630/1" alt="Sarah Johnson">
         </div>
-    </div>
+    </header>
 
     <!-- About Content -->
-    <div class="py-12 bg-white">
+    <section class="py-16 bg-page">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12">
                 <div class="mb-12 lg:mb-0">
-                    <h2 class="text-3xl font-extrabold text-gray-900 title-font mb-6" data-aos="fade-right">My Story</h2>
-                    <div class="prose prose-blue text-gray-500 mx-auto lg:max-w-none">
+                    <h2 class="text-3xl font-bold text-ink title-font mb-6" data-aos="fade-right">My Story</h2>
+                    <div class="text-muted max-w-none">
                         <p>
                             I've always been fascinated by the human experience - our thoughts, emotions, and the stories we tell ourselves. After spending a decade in corporate communications, I realized my true passion lay in exploring these themes more deeply.
                         </p>
@@ -142,123 +86,103 @@
                         </p>
                     </div>
                 </div>
-                <div class="lg:mt-0">
-                    <h2 class="text-3xl font-extrabold text-gray-900 title-font mb-6" data-aos="fade-left">My Values</h2>
-                    <div class="flow-root">
-                        <ul class="-mb-8">
-                            <li class="relative pb-8">
-                                <div class="relative flex items-start space-x-3" data-aos="fade-up">
-                                    <div class="bg-blue-500 rounded-full p-2 text-white">
-                                        <i data-feather="heart" class="w-6 h-6"></i>
-                                    </div>
-                                    <div class="min-w-0 flex-1">
-                                        <div>
-                                            <h3 class="text-lg font-medium text-gray-900">Authenticity</h3>
-                                        </div>
-                                        <div class="mt-2 text-gray-700">
-                                            <p>I believe in showing up as my true self and encouraging others to do the same. No filters, no pretenses - just real stories and honest reflections.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="relative pb-8">
-                                <div class="relative flex items-start space-x-3" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="bg-blue-500 rounded-full p-2 text-white">
-                                        <i data-feather="eye" class="w-6 h-6"></i>
-                                    </div>
-                                    <div class="min-w-0 flex-1">
-                                        <div>
-                                            <h3 class="text-lg font-medium text-gray-900">Mindfulness</h3>
-                                        </div>
-                                        <div class="mt-2 text-gray-700">
-                                            <p>Being present in each moment allows us to experience life more fully. I practice and write about mindfulness as a path to greater peace and clarity.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="relative pb-8">
-                                <div class="relative flex items-start space-x-3" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="bg-blue-500 rounded-full p-2 text-white">
-                                        <i data-feather="users" class="w-6 h-6"></i>
-                                    </div>
-                                    <div class="min-w-0 flex-1">
-                                        <div>
-                                            <h3 class="text-lg font-medium text-gray-900">Connection</h3>
-                                        </div>
-                                        <div class="mt-2 text-gray-700">
-                                            <p>We're all in this together. My writing aims to create bridges between people, helping us see our shared humanity despite our differences.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-ink title-font mb-6" data-aos="fade-left">My Values</h2>
+                    <ul class="space-y-8">
+                        <li class="flex items-start space-x-4" data-aos="fade-up">
+                            <div class="icon-chip rounded-lg p-2.5 flex-shrink-0">
+                                <i data-feather="heart" class="w-6 h-6"></i>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <h3 class="text-lg font-semibold text-ink">Authenticity</h3>
+                                <p class="mt-2 text-muted">I believe in showing up as my true self and encouraging others to do the same. No filters, no pretenses - just real stories and honest reflections.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon-chip rounded-lg p-2.5 flex-shrink-0">
+                                <i data-feather="eye" class="w-6 h-6"></i>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <h3 class="text-lg font-semibold text-ink">Mindfulness</h3>
+                                <p class="mt-2 text-muted">Being present in each moment allows us to experience life more fully. I practice and write about mindfulness as a path to greater peace and clarity.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon-chip rounded-lg p-2.5 flex-shrink-0">
+                                <i data-feather="users" class="w-6 h-6"></i>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <h3 class="text-lg font-semibold text-ink">Connection</h3>
+                                <p class="mt-2 text-muted">We're all in this together. My writing aims to create bridges between people, helping us see our shared humanity despite our differences.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Timeline -->
-    <div class="py-12 bg-gray-50">
+    <section class="py-16 bg-card border-y border-line">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
-                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Journey</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl title-font">
+                <h2 class="text-sm text-accent font-semibold tracking-widest uppercase">Journey</h2>
+                <p class="mt-2 text-3xl leading-8 font-bold tracking-tight text-ink sm:text-4xl title-font">
                     My Path So Far
                 </p>
             </div>
 
-            <div class="mt-10">
+            <div class="mt-12">
                 <div class="relative">
-                    <div class="absolute left-8 top-0 h-full w-0.5 bg-gray-200 md:left-1/2"></div>
-                    
+                    <div class="absolute left-8 top-0 h-full w-0.5 md:left-1/2" style="background: var(--line)"></div>
+
                     <!-- Timeline Item 1 -->
                     <div class="relative mb-8 pl-24 md:flex md:justify-between md:items-center md:pl-0 md:mb-12" data-aos="fade-right">
                         <div class="md:w-5/12 md:pr-8 md:text-right">
-                            <h3 class="text-lg font-semibold text-gray-900">Published First Book</h3>
-                            <p class="text-blue-600">2022</p>
+                            <h3 class="text-lg font-semibold text-ink">Published First Book</h3>
+                            <p class="text-accent font-medium">2022</p>
                         </div>
                         <div class="timeline-item relative mt-4 md:mt-0 md:w-5/12 md:pl-8">
-                            <p class="text-gray-600">
+                            <p class="text-muted">
                                 Released "Quiet Moments: Reflections on Mindful Living," a collection of essays that became a regional bestseller.
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Timeline Item 2 -->
                     <div class="relative mb-8 pl-24 md:flex md:flex-row-reverse md:justify-between md:items-center md:pl-0 md:mb-12" data-aos="fade-left">
                         <div class="md:w-5/12 md:pl-8">
-                            <h3 class="text-lg font-semibold text-gray-900">Began Mindfulness Blog</h3>
-                            <p class="text-blue-600">2019</p>
+                            <h3 class="text-lg font-semibold text-ink">Began Mindfulness Blog</h3>
+                            <p class="text-accent font-medium">2019</p>
                         </div>
                         <div class="timeline-item relative mt-4 md:mt-0 md:w-5/12 md:pr-8 md:text-right">
-                            <p class="text-gray-600">
+                            <p class="text-muted">
                                 Launched Mindful Musings as a personal project that grew into a community of over 50,000 monthly readers.
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Timeline Item 3 -->
                     <div class="relative mb-8 pl-24 md:flex md:justify-between md:items-center md:pl-0 md:mb-12" data-aos="fade-right">
                         <div class="md:w-5/12 md:pr-8 md:text-right">
-                            <h3 class="text-lg font-semibold text-gray-900">Corporate Career</h3>
-                            <p class="text-blue-600">2008-2018</p>
+                            <h3 class="text-lg font-semibold text-ink">Corporate Career</h3>
+                            <p class="text-accent font-medium">2008-2018</p>
                         </div>
                         <div class="timeline-item relative mt-4 md:mt-0 md:w-5/12 md:pl-8">
-                            <p class="text-gray-600">
+                            <p class="text-muted">
                                 Worked as a communications director for a Fortune 500 company, honing my writing and storytelling skills.
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Timeline Item 4 -->
                     <div class="relative mb-8 pl-24 md:flex md:flex-row-reverse md:justify-between md:items-center md:pl-0 md:mb-12" data-aos="fade-left">
                         <div class="md:w-5/12 md:pl-8">
-                            <h3 class="text-lg font-semibold text-gray-900">Journalism Degree</h3>
-                            <p class="text-blue-600">2004-2008</p>
+                            <h3 class="text-lg font-semibold text-ink">Journalism Degree</h3>
+                            <p class="text-accent font-medium">2004-2008</p>
                         </div>
                         <div class="timeline-item relative mt-4 md:mt-0 md:w-5/12 md:pr-8 md:text-right">
-                            <p class="text-gray-600">
+                            <p class="text-muted">
                                 Earned my BA in Journalism from Northwestern University, where I discovered my love for narrative writing.
                             </p>
                         </div>
@@ -266,103 +190,95 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Fun Facts -->
-    <div class="py-12 bg-white">
+    <section class="py-16 bg-page">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
-                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Personal</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl title-font">
+                <h2 class="text-sm text-accent font-semibold tracking-widest uppercase">Personal</h2>
+                <p class="mt-2 text-3xl leading-8 font-bold tracking-tight text-ink sm:text-4xl title-font">
                     Fun Facts About Me
                 </p>
             </div>
 
-            <div class="mt-10">
-                <div class="grid gap-8 md:grid-cols-3">
-                    <div class="bg-gray-50 p-6 rounded-lg" data-aos="zoom-in">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="coffee" class="w-6 h-6 text-blue-600"></i>
-                            </div>
-                            <h3 class="text-lg font-medium text-gray-900">Coffee Connoisseur</h3>
+            <div class="mt-12 grid gap-8 md:grid-cols-3">
+                <div class="card p-6" data-aos="zoom-in">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-chip p-3 rounded-lg mr-4">
+                            <i data-feather="coffee" class="w-6 h-6"></i>
                         </div>
-                        <p class="text-gray-600">
-                            I've visited over 200 coffee shops worldwide and keep a detailed journal rating each experience. My perfect cup is a lightly roasted Ethiopian pour-over.
-                        </p>
+                        <h3 class="text-lg font-semibold text-ink">Coffee Connoisseur</h3>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="book" class="w-6 h-6 text-blue-600"></i>
-                            </div>
-                            <h3 class="text-lg font-medium text-gray-900">Book Collector</h3>
+                    <p class="text-muted">
+                        I've visited over 200 coffee shops worldwide and keep a detailed journal rating each experience. My perfect cup is a lightly roasted Ethiopian pour-over.
+                    </p>
+                </div>
+                <div class="card p-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-chip p-3 rounded-lg mr-4">
+                            <i data-feather="book" class="w-6 h-6"></i>
                         </div>
-                        <p class="text-gray-600">
-                            My personal library contains over 1,200 volumes, organized by color (controversial, I know). I read about 50 books a year across various genres.
-                        </p>
+                        <h3 class="text-lg font-semibold text-ink">Book Collector</h3>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i data-feather="compass" class="w-6 h-6 text-blue-600"></i>
-                            </div>
-                            <h3 class="text-lg font-medium text-gray-900">Avid Traveler</h3>
+                    <p class="text-muted">
+                        My personal library contains over 1,200 volumes, organized by color (controversial, I know). I read about 50 books a year across various genres.
+                    </p>
+                </div>
+                <div class="card p-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-chip p-3 rounded-lg mr-4">
+                            <i data-feather="compass" class="w-6 h-6"></i>
                         </div>
-                        <p class="text-gray-600">
-                            I've lived in 4 countries and visited 37 others. My most transformative experience was a silent meditation retreat in the Himalayas.
-                        </p>
+                        <h3 class="text-lg font-semibold text-ink">Avid Traveler</h3>
                     </div>
+                    <p class="text-muted">
+                        I've lived in 4 countries and visited 37 others. My most transformative experience was a silent meditation retreat in the Himalayas.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800">
+    <footer class="bg-footer border-t border-line">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="col-span-2">
-                    <h3 class="text-white text-2xl font-bold gradient-text">Mindful Musings</h3>
-                    <p class="mt-4 text-gray-300 text-sm">
+                    <h3 class="text-2xl font-bold gradient-text">Mindful Musings</h3>
+                    <p class="mt-4 text-muted text-sm">
                         A space for thoughtful reflections and meaningful stories that inspire personal growth and mindfulness.
                     </p>
                     <div class="mt-4 flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i data-feather="twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i data-feather="instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i data-feather="facebook"></i>
-                        </a>
+                        <a href="#" class="text-muted hover:text-accent transition" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-muted hover:text-accent transition" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-muted hover:text-accent transition" aria-label="Facebook"><i data-feather="facebook"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Navigation</h3>
+                    <h3 class="text-ink text-sm font-semibold tracking-wider uppercase">Navigation</h3>
                     <ul class="mt-4 space-y-4">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white text-base">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-white text-base">About</a></li>
-                        <li><a href="blog.html" class="text-gray-300 hover:text-white text-base">Blog</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-white text-base">Contact</a></li>
+                        <li><a href="index.html" class="text-muted hover:text-ink text-base transition">Home</a></li>
+                        <li><a href="about.html" class="text-muted hover:text-ink text-base transition">About</a></li>
+                        <li><a href="blog.html" class="text-muted hover:text-ink text-base transition">Blog</a></li>
+                        <li><a href="contact.html" class="text-muted hover:text-ink text-base transition">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Legal</h3>
+                    <h3 class="text-ink text-sm font-semibold tracking-wider uppercase">Legal</h3>
                     <ul class="mt-4 space-y-4">
-                        <li><a href="#" class="text-gray-300 hover:text-white text-base">Privacy</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white text-base">Terms</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white text-base">Cookie Policy</a></li>
+                        <li><a href="#" class="text-muted hover:text-ink text-base transition">Privacy</a></li>
+                        <li><a href="#" class="text-muted hover:text-ink text-base transition">Terms</a></li>
+                        <li><a href="#" class="text-muted hover:text-ink text-base transition">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between">
-                <p class="text-gray-400 text-sm">
+            <div class="mt-12 border-t border-line pt-8 flex flex-col md:flex-row justify-between">
+                <p class="text-muted text-sm">
                     &copy; 2023 Mindful Musings. All rights reserved.
                 </p>
-                <p class="text-gray-400 text-sm mt-4 md:mt-0">
-                    Made with <i data-feather="heart" class="w-4 h-4 text-red-400 inline"></i> in Kenya
+                <p class="text-muted text-sm mt-4 md:mt-0">
+                    Made with <i data-feather="heart" class="w-4 h-4 text-accent inline"></i> in Kenya
                 </p>
             </div>
         </div>
